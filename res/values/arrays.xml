@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="genderList">
+		<item>Male</item>
+		<item>Female</item>
+	</string-array>
+	
+	<string-array name="accentList">
+		<item>xx_ZZ</item> <!-- user-define locale for testing -->
+		<item>af_ZA</item> <!-- Afrikaans -->
+		<item>en_ZA</item> <!-- English -->
+		<item>eu_ES</item> <!-- Basque -->
+		<item>is_IS</item> <!-- Icelandic -->
+		<item>nd_ZA</item> <!-- isiNdebele -->
+		<item>ns_ZA</item> <!-- Northern Sotho = Sepedi -->
+		<item>ss_ZA</item> <!-- SiSwati -->
+		<item>st_ZA</item> <!-- Southern Sotho = Sesotho -->
+		<item>tn_ZA</item> <!-- Setswana -->
+		<item>ts_ZA</item> <!-- Xitsonga -->
+		<item>ve_ZA</item> <!-- Tshivenda -->
+		<item>xh_ZA</item> <!-- Xhosa -->
+		<item>zu_ZA</item> <!-- Zulu -->
+	</string-array>
+	
+	<string-array name="areaList">
+		<item>Gauteng</item>
+		<item>Limpopo</item>
+		<item>KwaZulu-Natal</item>
+		<item>Free State</item>
+		<item>North West</item>
+		<item>Mpumalanga</item>
+		<item>Eastern Cape</item>
+		<item>Western Cape</item>
+		<item>Northern Cape</item>
+		<item>other</item>
+	</string-array>
+	
+	<string-array name="environmentList">
+		<item>Quiet</item>
+		<item>Noisy</item>
+	</string-array>
+	
+	<string-array name="skipReasonList">
+		<item>Not spelled-out word</item>
+		<item>Not sure how to pronounce</item>
+		<item>Offensive</item>
+		<item>Other</item>
+	</string-array>
+	
+</resources>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/hltBlue"
+    android:gravity="center"
+    >
+	<TextView  
+	    android:layout_width="wrap_content" 
+	    android:layout_height="wrap_content" 
+	    android:text="HLT"
+	    android:textSize="60sp"
+	    android:textColor="@color/red"
+	    android:textStyle="bold"
+		android:gravity="center"
+	    />
+	<TextView  
+	    android:layout_width="wrap_content" 
+	    android:layout_height="wrap_content" 
+	    android:text="HUMAN LANGUAGE TECHNOLOGY"
+	    android:textSize="18sp"
+	    android:textColor="@android:color/white"
+	    android:gravity="center"
+
+	    />
+	<TextView  
+	    android:layout_width="wrap_content" 
+	    android:layout_height="wrap_content" 
+	    android:text="CSIR Meraka"
+	    android:textSize="20sp"
+	    android:textColor="@color/hltOrange"
+		android:gravity="center"
+	    />
+</LinearLayout>

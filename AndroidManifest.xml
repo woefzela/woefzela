@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (c) 2011 CSIR, Meraka, South Africa
+
+  Contributors: 
+    - The Department of Arts and Culture, The Government of South Africa.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+  
+  Developer: Nic de Vries
+ -->
+ 
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="org.meraka.nchlt.woefzela"
+      android:versionCode="10"
+      android:versionName="10.0">
+      
+      <!-- ChangeLog
+      	v1:			
+      				Alpha release for testing
+      	v1 > v2:		
+      				Changes:
+      				- Complete code to track corpus position and wrap counter
+      				- Implement to reach target prompts from corpus regardless of corpus length (wrap if need)
+      				- Enable Next to continue without pressing stop
+      				- Set prompt to green/red when ready
+      				- Add skip list with reason and write to file
+      				- Externalised some resources and settings (more later)
+      				- Override back button function and warn
+      				- Implement separate training corpus concept
+      				- Trap if audio recorder does not initialize properly
+      				- Basic real-time checks: clipping, 'no' recording
+      				- Fix UTF-8 reading problem seemed to have appeared since RandomAccessFile
+      				- Read in new corpus format (not use other info yet)
+      				- Repositioned record/stop and next buttons
+					- Remove title for more space
+					- Implement parsing on loading new corpus format, even if not use other columns now
+					- Add basic status info: done/total
+					- Add recording location in Session Info and write to file
+					- Make Respondent email optional: check write and read
+					- Make ID compulsory 13 chars for FW and Respondent
+					- Lower minimum volume for real time check as purpose is to catch 'blank' recordings
+		v2 > v3:		
+      				Changes:
+      				- Changed tracking filename extensions from .dat to .txt for easier viewing on phone
+      				- Added RANDOMIZE switch in PromptList for choice and debugging
+      				- Fix corpus tracking issues
+      				NOTE on v3: This version worked pretty well in the field should a default version be
+      				needed.
+      				 		
+      	v3 > v4: 
+      				Changes:
+      				Added language codes for
+	      				nd_ZA	    isiNdebele
+	      				ss_ZA	    SiSwati
+	      				ve_ZA	    Tshivenda
+	      				ts_ZA	    Xitsonga
+					
+		v4 > v5:
+					Changes: (start changes on 2/12/2010)
+					- Randomize the start of block index and load block from there in file. Note: this is to
+					avoid needing tracking files that need to be carried over between uploads so that corpus
+					coverage can be achieved. 
+					- Also therefore removed use of tracking files for "line to start reading from" and "number
+					of times corpus has wrapped."
+					- Move WoefzelaErrorLOG.txt to /sdcard/Tracking/WoefzelaErrorLOG.txt for uploading.
+					- Changed purpose of method updateLineNumberToStartReadingFrom() to store (now append) the index of the 
+					random starting point generated, regardless if session completes or not (as not relevant any more).
+					Also, renamed method to...updateLineIndexStartedReadingFrom() and filename in settings.xml to
+					_lineIndexStartedReadingFrom.txt
+					- Remove call to addValueToWrapCounterFile(), since wrapping not anymore a clear
+					indication of corpus coverage (due to randomness). (Left code in place for now).
+					- Changed EXTERNAL_ADVANCED_QC_SWITCH_FILENAME from being advancedQCON.txt to being
+					advancedQCOFF.txt and change logic to be:
+						* No file exists: QC is ON (wanted default behaviour to have QC ON in case file not copied)
+						* Value of 1 in file: QC is OFF (i.e. 1=TRUE)
+		 				* Any other value in file (e.g. 0, -1, 2 etc): QC is ON
+		 				Thus to FORCE QC to be OFF, create such a file AND place the value of 1 in it.
+		 			- Hid many Log.x statements inside conditional output to minimise output (substituted with logX).
+		
+		v5 > v6:
+      				Changes:
+      				- Fixed recording bug if user pressed Next > Start in quick succession
+      				- Create all (later) required folders in first activity
+      				- Added createAllRequiredFolders() to FieldworkerProfile.java to create all folders on
+      				startup on sdcard
+      				- Deleted unused classes and files:
+      					- Deleted ThankYouAndFeedback.java and associated thankyou.xml (& entry in manifest)
+						- Deleted TermsAndConditions.java and associated terms.xml (& entry in manifest)
+						- Deleted TerminateSession.java and associated terminate_screen.xml (& entry in manifest)
+					- Removed reference to ZAR in Session Information
+      				- Cleanup phase 1: NO CODE CHANGES. Only:
+      					- Remove already commented out sections. i.e. known to work like that!
+      					- Not even seemingly harmless/useless lines!
+      					- Remove unused imports (NOT variables as side-effects may still exist.)
+      					- Do not remove deprecated imports. Do later.
+      					- Remove extra blank lines, BUT BE SURE EMPTY AND NOT BRACKET ETC.
+      				- Replaced AudioFormat.CHANNEL_CONFIGURATION_MONO with CHANNEL_IN_MONO in MainRecordingActivity.java
+      				
+      				- NOTE: Switched to different dev machine during this time and upgraded to:
+      					Eclipse		eclipse-SDK-3.6.1-linux-gtk.tar.gz
+      					AndroidSDK	android-sdk_r09-linux_x86.tgz
+      					ADT 		v9.0.0.v201101191456-93220
+      					
+		v6 > v7:
+      				Changes:
+      				- Added Logging.java class to make some logs conditional, and removed local methods, in 
+      				numerous classes. Also:
+      					- Removed LOG_E flag altogether and created two UNCONDITIONAL error log methods:
+      						- logCriticalError - log to file then kill app
+      						- logE - log to terminal (logcat) always (cannot turn off)
+      					- Replaced the following to fit with new class:
+	      					- LOG_E with either log.logCriticalError or log.logE
+    	  					- logV with log.logV
+    	  					- logD with log.logD
+	      					- logI with log.logI
+    	  					- logW with log.logW
+    	  			- Some more cleanup
+    	v7 > v8:
+    	 			Changes:
+    	 			- Add locales for: Icelandic = is_IS and Basque = eu_ES
+    	 			- Added 'other' recording area
+    	 			- Relaxed some info input criteria: lengths and compulsory vs optional
+    	 			- Change Respondent ID to Respondent age and associated code
+    	 			- Added to xml with prompt: accent, age, gender, location, environment, comments, appVersion
+    	 			- Write current busy session to /Tracking/currentBusySession.txt file for WUpload to check/leave out
+ 
+     	v8.0 > v9.0:
+    	 			Changes:
+    	 			- Solve recording issue appearing only on some devices (only use minBuff size, not larger).
+    	 			- Changed QC service from being a bound service AND a started service to being only a bound service.
+    	 			- Removed: uses-permission android:name="android.permission.WRITE_CONTACTS" and 
+    	 				uses-permission android:name="android.permission.READ_CONTACTS" from Manifest file. Not used anymore.
+					- Append Respondent profiles with the Woefzela version number (after last line) to facilitate parsing
+					  of different versions of files differently. Basically before v8.0 files have one format and from v8.0 onwards a modified format, mainly:
+						- Respondent ID number (line) is replaced with the Age in Respondent profiles.
+						- Output XML file (meta data with each recording) has additional tags with information apart from previous <prompt> tags. Prompt tag is unchanged.
+					- Fixed bug: Additional meta data (accent, age, gender, location, environment, comments) was only in training session XML output and not in recording session XML output.
+					- Reordered language array list and added xx-ZZ 'user-defined' tag for test corpora to avoid confusion with real corpora.
+					- Changed VOLUME_SUFFICIENT_RMS_LIMIT (in MyService) from 600 (for HTC Magic/HTC Dream) to 1200 for HTC Wildfire, due to varying hardware
+					- Changed TRUNCATION_RMS_LIMIT (in MyService) from 300 (for HTC Magic/HTC Dream) to 600 for HTC Wildfire, due to varying hardware
+		v9.0 > 10.0:
+					Changes:
+					- Added RANDOM_STARTPOINT to PromptList.java to be able to turn the random batch selection on/off. 
+					*WARNING* RANDOM_STARTPOINT should generally be set to 'true'! If the starting point is not random only the 
+					first-N prompts will ever be displayed regardless of the number of prompts in the input corpus! For typical
+					ASR corpora this would destroy the n-gram/n-phone coverage completely.
+					Note: The RANDOMIZE constant (in the same class) has existed since a number of versions ago, and turns on/off the randomization WITHIN a block as it is presented
+					to the reader.		
+       -->
+      
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+      
+    <application android:icon="@drawable/icon" android:label="@string/app_name">
+    
+        <activity android:name=".SplashActivity"
+                  android:label="@string/app_name"
+                  android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+		
+        <activity android:name=".FieldworkerProfile"
+        	android:label="@string/app_name"
+        	android:windowSoftInputMode="stateUnchanged" 
+        	android:screenOrientation="portrait" >
+        	<intent-filter>
+				<action android:name="org.meraka.nchlt.woefzela.splash.CLEARSPLASH"/>
+				<category android:name="android.intent.category.DEFAULT"/>
+			</intent-filter>
+        </activity>
+        
+       	<activity android:name=".RespondentProfile"
+        	android:label="@string/app_name"
+        	android:windowSoftInputMode="stateUnchanged"
+        	android:screenOrientation="portrait" >
+        	<intent-filter>
+				<action android:name="org.meraka.nchlt.woefzela.action.RespondentProfile"/>
+				<category android:name="android.intent.category.DEFAULT"/>
+			</intent-filter>
+        </activity>
+        
+        <activity android:name=".SessionInfo"
+        	android:label="@string/app_name"
+        	android:windowSoftInputMode="stateUnchanged"
+        	android:screenOrientation="portrait" >
+        	<intent-filter>
+					<action android:name="org.meraka.nchlt.woefzela.action.SessionInfo"/>
+					<category android:name="android.intent.category.DEFAULT"/>
+			</intent-filter>
+        </activity>
+        
+        <activity android:name=".MainRecordingActivity"
+        	android:label="@string/app_name"
+        	android:screenOrientation="portrait" 
+        	android:theme="@android:style/Theme.NoTitleBar" >
+        	<intent-filter>
+				<action android:name="org.meraka.nchlt.woefzela.action.MainRecordingActivity"/>
+				<category android:name="android.intent.category.DEFAULT"/>
+			</intent-filter>
+        </activity>
+        
+        <service android:enabled="true" android:name=".MyService" />
+
+    </application>
+    
+    <uses-sdk android:minSdkVersion="7" />
+
+</manifest> 

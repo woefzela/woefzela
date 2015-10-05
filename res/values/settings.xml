@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- This should be the only file that is edited from time to time, not the other resources. 
+	i.e. it contains things that might change and recompiling is OK.
+-->
+
+<resources>
+	<integer name="TARGET_NUMBER_OF_LINES_TO_READ_TRAINING">15</integer>
+	<integer name="TARGET_NUMBER_OF_LINES_TO_READ_RECORDING">600</integer>
+	
+	<string name="PROGRAM_FOLDER_NAME">/Woefzela</string>
+	<string name="DATA_OUTPUT_FOLDER_NAME">/OutputData</string>
+	<string name="CORPUS_FOLDER_NAME">/CorpusInput</string>
+	<string name="PROFILE_FOLDER_NAME">/Profiles</string>
+	<string name="TRACKING_FOLDER_NAME">/Tracking</string>
+	
+	<string name="PROFILE_FOLDER_FIELDWORKERS">/Fieldworkers</string>
+	<string name="PROFILE_FOLDER_RESPONDENTS">/Respondents</string>
+	<string name="PROFILE_FOLDER_SESSIONS">/Sessions</string>
+	
+	<string name="CORPUS_FILENAME_EXTENSION">.txt</string>
+	<string name="TRAINING_CORPUS_SUFFIX">_train</string>
+	<string name="CORPUS_POS_COUNTER_FILENAME_SUFFIX">_lineIndexStartedReadingFrom.txt</string>
+	<string name="CORPUS_WRAP_COUNTER_FILENAME_SUFFIX">_numberOfTimesCorpusHasWrapped.txt</string>
+	<string name="EXTERNAL_TARGET_NUMBER_OF_LINES_TO_READ_RECORDING_FILENAME">recordingTarget.txt</string>
+	
+	<string name="EXTERNAL_ADVANCED_QC_SWITCH_FILENAME">advancedQCOFF.txt</string>
+	
+</resources>

@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_height="fill_parent" 
+		android:layout_width="fill_parent"
+		>
+		
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:orientation="vertical"
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    >
+	    
+	    <!-- FIELDWORKER DATA -->
+	    <TextView
+			android:id="@+id/tFieldworkerInfo" 
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			android:text="Fieldworker Information"
+			android:textColor="@color/hltGreen"
+			android:textSize="20sp"
+			android:textStyle="bold"
+			>
+		</TextView>
+		
+		<TextView
+			android:id="@+id/tFWName" 
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			android:text="First name(s):"
+			android:textColor="@color/hltOrange"
+			android:imeOptions="actionNext"
+			>
+		</TextView>
+		
+		<EditText
+	        android:id="@+id/eFWName"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:text=""
+	        android:textSize="30sp"
+	        android:textStyle="normal"
+	        android:imeOptions="actionNext"
+	        android:inputType="textCapWords"
+	        android:hint="@string/nameHintFW"
+	        />
+		
+		<TextView
+			android:id="@+id/tFWSurname" 
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			android:text="Surname(s): "
+			android:textColor="@color/hltOrange"
+			>
+		</TextView>
+		
+		<EditText
+	        android:id="@+id/eFWSurname"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:text=""
+	        android:textSize="30sp"
+	        android:textStyle="normal"
+	        android:imeOptions="actionNext"
+	        android:inputType="textCapWords"
+	        android:hint="@string/surnameHintFW"
+	        />
+		
+		<TextView
+			android:id="@+id/tFWID" 
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			android:text="ID No.: (At least: YYMMDD)"
+			android:textColor="@color/hltOrange"
+			>
+		</TextView>
+		
+		<EditText
+	        android:id="@+id/eFWID"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:text=""
+	        android:textSize="30sp"
+	        android:textStyle="normal"
+	        android:imeOptions="actionNext"
+	        android:inputType="number"
+            android:digits="1234567890"
+            android:maxLength="13"
+            android:hint="@string/idHintFW"
+	        />
+	        
+	    <TextView
+			android:id="@+id/tFWMobile" 
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			android:text="Mobile number: (optional)"
+			android:textColor="@color/hltOrange"
+			>
+		</TextView>
+		
+		<EditText
+	        android:id="@+id/eFWMobile"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:text=""
+	        android:textSize="30sp"
+	        android:textStyle="normal"
+	        android:inputType="number"
+            android:digits="1234567890"        
+	        android:hint="@string/mobileHintFW"
+	        android:imeOptions="actionNext"
+            android:maxLength="10"
+	        />
+
+		<TextView
+			android:id="@+id/tFWEmail" 
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			android:text="Email address: (optional)"
+			android:textColor="@color/hltOrange"
+			>
+		</TextView>
+		
+		<EditText
+	        android:id="@+id/eFWEmail"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:text=""
+	        android:textSize="30sp"
+	        android:textStyle="normal"
+	        android:imeOptions="actionDone"
+	        android:inputType="textEmailAddress"
+	        android:hint="@string/emailHintFW"
+	        />
+	
+		<TextView
+			android:id="@+id/tProfileIDHeading" 
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			android:text="Profile ID: "
+			android:textColor="@color/hltOrange"
+			>
+		</TextView>
+		
+		<TextView
+			android:id="@+id/tProfileID" 
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			android:text="@string/profileKey"
+			android:textColor="@color/androidGrey1"
+			>
+		</TextView>
+		
+		<LinearLayout 
+		    android:orientation="horizontal"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:background="@color/hltGreen"
+		    android:layout_marginTop="20sp"
+		    android:paddingTop="10sp"
+		    android:paddingBottom="10sp"
+		    android:paddingLeft="10sp"
+		    android:paddingRight="10sp"
+		    >
+		
+			<Button android:id="@+id/bLoadProfile" 
+				android:text="@string/loadProfile" 
+				android:layout_width="wrap_content" 
+				android:layout_height="wrap_content"
+				android:layout_weight="1" 
+				>
+			</Button>
+		</LinearLayout>
+				
+		<LinearLayout 
+		    android:orientation="horizontal"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:background="@color/hltBlue"
+		    android:layout_marginTop="20sp"
+		    android:paddingTop="10sp"
+		    android:paddingBottom="10sp"
+		    android:paddingLeft="10sp"
+		    android:paddingRight="10sp"
+		    >
+		
+			<Button android:id="@+id/bReset" 
+				android:text="@string/reset" 
+				android:layout_width="wrap_content" 
+				android:layout_height="wrap_content"
+				android:layout_weight="1" 
+				>
+			</Button>
+			
+			<Button android:id="@+id/bNext" 
+				android:text="@string/next"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_weight="1" 
+				>
+			</Button>
+		</LinearLayout>
+		
+		<!-- Status bar -->
+		<LinearLayout 
+		    android:orientation="horizontal"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:background="@color/hltOrange"
+		    android:layout_marginTop="20sp"
+		    android:paddingTop="10sp"
+		    android:paddingBottom="10sp"
+		    android:paddingLeft="10sp"
+		    android:paddingRight="10sp"
+		    >
+		
+		<TextView
+			android:id="@+id/tStatusBar" 
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			android:text="@string/statusText"
+			android:textColor="@android:color/black"
+			>
+		</TextView>
+
+		</LinearLayout>
+	
+	</LinearLayout>
+</ScrollView>

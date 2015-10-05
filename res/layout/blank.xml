@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:orientation="vertical"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    >
+	    
+		<TextView
+			android:id="@+id/texview"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content" 
+		    android:text="this page is left blank intentionally"
+		    android:textSize="10dip"
+	        android:textStyle="normal"
+	        android:gravity="center"
+	    />
+</LinearLayout>

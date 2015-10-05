@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_height="fill_parent" 
+		android:layout_width="fill_parent"
+		>
+		
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:orientation="vertical"
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    >
+	    
+	    <TextView
+			android:id="@+id/tSessionInfoHeading" 
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			android:text="@string/tSessionInfo"
+			android:textColor="@color/hltGreen"
+			android:textSize="20sp"
+			android:textStyle="bold"
+			>
+		</TextView>
+		
+		<TextView
+			android:id="@+id/tFWProfile" 
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			android:text="Fieldworker Profile: "
+			android:textColor="@color/hltOrange"
+			android:imeOptions="actionNext"
+			>
+		</TextView>
+		
+		<!-- ?? check properties valid for tv iso et -->
+		<TextView
+	        android:id="@+id/tFWProfileKey"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:text="Loading..."
+	        android:textStyle="normal"
+	        android:imeOptions="actionNext"
+	        android:inputType="textCapWords"
+	        />
+		
+		<TextView
+			android:id="@+id/tRespProfile" 
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			android:text="Respondent Profile: "
+			android:textColor="@color/hltOrange"
+			>
+		</TextView>
+		
+		<TextView
+	        android:id="@+id/tRespProfileKey"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:text="Loading..."
+	        android:textStyle="normal"
+	        android:imeOptions="actionNext"
+	        android:inputType="textCapWords"
+	        />
+	        
+	    <TextView
+			android:id="@+id/tRecordingLocationArea" 
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			android:text="Recording location (area): "
+			android:textColor="@color/hltOrange"
+			>
+		</TextView>
+		
+		<Spinner
+			android:id="@+id/spRecordingLocationArea"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:prompt="@string/areaPrompt"
+			android:entries="@array/areaList" 
+			>
+		</Spinner>
+		
+		<TextView
+			android:id="@+id/tEnvironment" 
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			android:text="Environment: "
+			android:textColor="@color/hltOrange"
+			>
+		</TextView>
+		
+		<Spinner
+			android:id="@+id/sEnvironment"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:prompt="@string/environmentPrompt"
+			android:entries="@array/environmentList" 
+			>
+		</Spinner>
+		   
+		<TextView
+			android:id="@+id/tAgreedSessionFee" 
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			android:text="Agreed session fee: "
+			android:textColor="@color/hltOrange"
+			>
+		</TextView>
+		
+		<EditText
+	        android:id="@+id/eAgreedSessionFee"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:text=""
+	        android:textSize="30sp"
+	        android:textStyle="normal"
+	        android:imeOptions="actionNext"
+	        android:inputType="phone"
+	        android:digits=".1234567890"
+	        android:hint="@string/feeHint"
+	        />
+	        
+	     <TextView
+	    	android:id="@+id/tComments"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:paddingBottom="4dip"
+	        android:text="@string/commentPrompt"
+	        android:textColor="@color/hltOrange"  />
+	        
+	     <EditText
+	        android:id="@+id/eComments"
+	        android:layout_width="fill_parent"
+	        android:layout_height="fill_parent"
+	        android:text=""
+	        android:textSize="30sp"
+	        android:textStyle="normal"
+	        android:scrollbars="vertical"
+	        android:scrollbarSize="20sp"
+	        android:scrollbarStyle="outsideOverlay"
+	        android:inputType="textFilter"
+	        android:imeOptions="actionDone"
+	        android:lines="2"
+	        />
+		
+		<!-- Maybe remove later, now just check if d/t correct -->
+		<TextView
+			android:id="@+id/tDateTime" 
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			android:text="Date/Time profile created: "
+			android:textColor="@color/hltOrange"
+			>
+		</TextView>
+		
+		<TextView
+			android:id="@+id/tDateTimeInfo" 
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			android:text="@string/sessionCreateDateTime"
+			android:textColor="@color/androidGrey1"
+			>
+		</TextView>
+
+<!-- maybe add back later?? -->
+		<LinearLayout 
+			android:visibility="gone" 
+		    android:orientation="horizontal"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:background="@color/hltGreen"
+		    android:layout_marginTop="20sp"
+		    android:paddingTop="10sp"
+		    android:paddingBottom="10sp"
+		    android:paddingLeft="10sp"
+		    android:paddingRight="10sp"
+		    >
+		
+			<Button android:id="@+id/bLoadProfile" 
+				android:text="@string/loadProfile" 
+				android:layout_width="wrap_content" 
+				android:layout_height="wrap_content"
+				android:layout_weight="1" 
+				>
+			</Button>
+		</LinearLayout>
+				
+		<LinearLayout 
+		    android:orientation="horizontal"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:background="@color/hltBlue"
+		    android:layout_marginTop="20sp"
+		    android:paddingTop="10sp"
+		    android:paddingBottom="10sp"
+		    android:paddingLeft="10sp"
+		    android:paddingRight="10sp"
+		    >
+		
+			<Button android:id="@+id/bReset" 
+				android:text="@string/reset" 
+				android:layout_width="wrap_content" 
+				android:layout_height="wrap_content"
+				android:layout_weight="1" 
+				>
+			</Button>
+			
+			<Button android:id="@+id/bNext" 
+				android:text="@string/next"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_weight="1" 
+				>
+			</Button>
+		</LinearLayout>
+		
+		<!-- Status bar -->
+		<LinearLayout 
+		    android:orientation="horizontal"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:background="@color/hltOrange"
+		    android:layout_marginTop="20sp"
+		    android:paddingTop="10sp"
+		    android:paddingBottom="10sp"
+		    android:paddingLeft="10sp"
+		    android:paddingRight="10sp"
+		    >
+		
+		<TextView
+			android:id="@+id/tStatusBar" 
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			android:text="@string/statusText"
+			android:textColor="@android:color/black"
+			>
+		</TextView>
+
+		</LinearLayout>
+	
+	</LinearLayout>
+</ScrollView>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<!-- Application general -->
+	    <string name="app_name">Woefzela</string>
+	    
+    <!-- Profiles common -->
+<!-- 	    <string name="nameHint">Xolani Mandla</string>-->
+<!--	    <string name="surnameHint">Nelisiwe</string>-->
+<!--	    <string name="idHint">YYMMDDxxxxxxx</string>-->
+<!--	    <string name="mobileHint">0821234567</string>-->
+<!--	    <string name="emailHint">xnelisiwe@email.com</string>-->
+	    
+	    <string name="profileKey">New profile...</string>
+	    
+	    <string name="loadProfile">Load existing profile</string>
+	    <string name="reset">Reset fields!</string>
+	    <string name="next">Next...</string>
+	    <string name="statusText">Status: OK</string>
+    
+    <!-- Fieldworker profile -->
+    
+        <string name="nameHintFW">Xolani Mandla</string>
+	    <string name="surnameHintFW">Nelisiwe</string>
+	    <string name="idHintFW">YYMMDDxxxxxxx</string>
+	    <string name="mobileHintFW">0821234568</string>
+	    <string name="emailHintFW">xmn@email.com</string>
+	    
+
+    
+    <!-- Respondent profile -->
+		<string name="nameHintResp">Jacob Cornelius</string>
+	    <string name="surnameHintResp">Badenhorst</string>
+	    <string name="ageHintResp">23</string>
+	    <string name="mobileHintResp">0821234567</string>
+	    <string name="emailHintResp">sample@sample.com</string>
+    
+    	<string name="readTerms">Read the Terms and Conditions</string>
+    	<string name="termText">Yes, I accept ALL the Terms and Conditions!</string>
+    	<string name="nextWithCondition">Quit!</string>
+    
+    <!-- Session info -->
+    	<string name="tSessionInfo">Session Information</string>
+    	
+    	<!-- TO MOVE -->
+    		<string name="accentPrompt">Select...</string>
+    		<string name="genderPrompt">Select...</string>
+    		<string name="areaPrompt">Select...</string>
+    		<string name="environmentPrompt">Select...</string>
+
+		<string name="feeHint">50.00 (Example only)</string>
+		<string name="commentPrompt">Session specific comments (optional):</string>
+		
+		<string name="sessionCreateDateTime">YYYYMMDDThhmmss</string>
+   
+<!--    	<string name="environment">Enviro</string>-->
+<!--    	<string name="sessionKey">Session key...</string>-->
+<!--    	<string name="trainingSession">Training session</string>-->
+    	
+    <!-- Terms info -->
+    	<string name="back">Back</string>
+    	
+    	<string name="TERMS_TEXT">PARTICIPANT AGREEMENT\n\nIn this study, The CSIR, located at Brummeria, Pretoria, South Africa, (“We” or “Us”) will be collecting voice samples and other information from You, the Participant named below.\n\n
+    	You confirm that You are of the age of majority and capable of entering into a binding agreement.  If You are not, You may not participate in this study and should tell Us immediately.\n\nBy participating in this study:\n\n
+1.  You agree to provide voice samples in the required language, as well as comments, feedback, ideas, reports, suggestions, data or other information as requested (collectively “Feedback”).\n\n
+2.  You agree that We may use this Feedback to develop and improve speech technologies and promote these studies, and that the Feedback may be shared with others, including the general public, to develop and improve their speech technologies. You specifically waive and release any potential intellectual property, right of publicity or right of privacy claim against Us or others for use or sharing of Your Feedback.\n\n
+You also understand that:\n\n
+1.   During this study, you may encounter content that you may find offensive, indecent or objectionable. You may choose to not provide Feedback for that content, but You must inform us accordingly.\n\n
+2.   If You wish to discontinue your participation in the study it is your responsibility to inform us in writing or provide no further Feedback to us.  You do however, agree and understand that if You end your participation in the study, we may continue to use and share the Feedback previously collected before You ended Your participation in the study.\n\n
+3.  We or others are not obligated to use Your Feedback, and except for one-time compensation for participation in this study (if any), You will not be further compensated for participation in this study or for use or sharing of Your Feedback, nor will you become an agent or partner because of Your participation in the study.
+    	</string>
+
+</resources>

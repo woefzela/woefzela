@@ -1,0 +1,84 @@
+--------------------------------------------------------------------------------
+README Woefzela v10.0
+--------------------------------------------------------------------------------
+
+Description
+
+The Woefzela software application supports speech data collection from different speakers using an Android device. 
+
+Prompts are displayed and speakers guided in producing the necessary recordings. The output, consisting of audio and associated transcriptions, is typically used as training and/or testing data for building Automatic Speech Recognition (ASR) systems in the target language.
+
+--------------------------------------------------------------------------------
+
+Licensing
+
+/* 
+ * Copyright (c) 2011 CSIR, Meraka, South Africa
+ *
+ * Contributors: 
+ *   - The Department of Arts and Culture, The Government of South Africa.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, 
+ * either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *  
+ * Developer: Nic de Vries
+ *   
+ */
+
+--------------------------------------------------------------------------------
+
+Contributors
+
+Main author: Nic de Vries
+
+Other contributors: 
+Etienne Barnard
+Marelie Davel
+Jaco Badenhorst
+Charl van Heerden
+Alta de Waal
+
+--------------------------------------------------------------------------------
+
+Citing
+
+If you find this application useful, please cite the associated paper:
+
+N.J. de Vries, J. Badenhorst, M.H. Davel, E. Barnard and A. de Waal, “Woefzela - An open-source platform for ASR data collection in the developing world,” in Proc. INTERSPEECH, Florence, Italy, August 2011, pp. 3177-3180.
+
+Nic J. de Vries, Marelie H. Davel, Jaco Badenhorst, Willem D. Basson, Febe de Wet, Etienne Barnard and Alta de Waal, “A smartphone-based ASR data collection tool for under-resourced languages”, Speech Communication, Volume 56, January 2014, pp 119-131.
+
+--------------------------------------------------------------------------------
+
+Downloading
+
+Pre-compiled version available here:
+https://sites.google.com/site/woefzela/home/download
+
+Source code available here:
+https://github.com/woefzela/woefzela
+
+Source code git clone string:
+https://github.com/woefzela/woefzela.git
+
+
+--------------------------------------------------------------------------------
+
+Installation and use
+
+See documentation at:
+https://docs.google.com/document/d/1X2YtKwk9znYr3WrtmIiHSgTIhmDKsLIVWwhmsmay7R0
+
+--------------------------------------------------------------------------------
+
+
